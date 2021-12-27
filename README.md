@@ -9,7 +9,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 pip install foobar
 ```
 
-## How To Run Project
+## How to Run Project
 ```bash
 mkdir [whateverYouWant]
 cd [whateverYouWant]
@@ -39,13 +39,13 @@ npm start
 2. update API doesn't work (couldn't figure out the connection_err)
 
 
-## Work To Be Completed
+## Work to be Completed
 1. secure MongoDB credentials
 2. debug MongoDb configs
 3. debug update API (restock and sodaQuantity update were to use the same API)
 
 
-## Improvements to Make
+## Improvements to Make/Things to Do
 1. Create an account dashboard
 * account components will manage Account Balance (additional users, and sodas purchases)
 2. Incorporate Redux to better manage state throughout the client application
@@ -53,6 +53,7 @@ npm start
 3. Improvements on UX/UI
 4. User Testing (find bugs)
 5. Fix Bugs
+6. Launch Application
 
 
 TechStack - (MERN)
