@@ -50,12 +50,12 @@ npm start
 * account components will manage Account Balance (additional users, and sodas purchases)
 2. Incorporate Redux to better manage state throughout the client application
 * this would reduce GET requests (sodaInformation would be fetched and updated in redux store vs in each component)
-3. Improvements on UX/UI
+3. Improve on UX/UI
 4. User Testing (find bugs)
 5. Fix Bugs
 6. Launch Application
 
 
-TechStack - (MERN)
+## TechStack - (MERN)
 FrontEnd - ReactJs
 Backend - Express, MongoDB, NodeJs
