@@ -1,40 +1,58 @@
-How to run project
+# SodaApp - (12-26-2021 update)
+
+MERN SodaVendingMachine Application
+
+## Installation
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+
+```bash
+pip install foobar
+```
+
+## How To Run Project
+```bash
 mkdir [whateverYouWant]
 cd [whateverYouWant]
 git clone git@github.com:BDPeppers/SodaProject.git
+```
 
-starting the server
+
+## Starting Server
+```bash
 cd server
 npm start
+```
 
-starting the react client
+## Starting Client
+```
 cd soda-app
 npm start
+```
 
-Figma Notes:
-https://www.figma.com/file/Ft2cezRsqzBklfIQ9fJOEQ/Soda?node-id=0%3A1
+## Figma/Brainstroming Notes:
 
-BUGS:
--after inputting the desired soda QTY you must click outside of the textfield
--udpate API doesn't work (couldn't figure out the connection_err)
-
-Work to be completed:
--secure MongoDB credentials
--debug MongoDb configs
--debug update API (restock and sodaQuantity update were to use the same API)
-
-Improvements if given more time:
-1.Create an account dashboard 
--account components will manage Acount Balance (additional users, and sodas purchases)
-2.Incorporate Redux to better manage state throughout the client application
--this would reduce GET requests (sodaInformation would be fetched and updated in redux store vs in each component)
-3.Improvements on UX/UI
-4.User Testing (find bugs)
-5.Fix Bugs
+[Notes](https://www.figma.com/file/Ft2cezRsqzBklfIQ9fJOEQ/Soda?node-id=0%3A1)
 
 
-Project Notes:
-all sodas start off with half of their maxQuantity available to vend
+## Bugs
+1. after inputting the desired soda QTY you must click outside of the text field
+2. update API doesn't work (couldn't figure out the connection_err)
+
+
+## Work To Be Completed
+1. secure MongoDB credentials
+2. debug MongoDb configs
+3. debug update API (restock and sodaQuantity update were to use the same API)
+
+
+## Improvements to Make
+1. Create an account dashboard
+* account components will manage Account Balance (additional users, and sodas purchases)
+2. Incorporate Redux to better manage state throughout the client application
+* this would reduce GET requests (sodaInformation would be fetched and updated in redux store vs in each component)
+3. Improvements on UX/UI
+4. User Testing (find bugs)
+5. Fix Bugs
 
 
 TechStack - (MERN)
