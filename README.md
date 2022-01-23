@@ -57,5 +57,5 @@ npm start
 
 
 ## TechStack - (MERN)
-* FrontEnd - ReactJs
+* FrontEnd - ReactJs/Redux
 * Backend - Express, MongoDB, NodeJs
