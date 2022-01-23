@@ -42,7 +42,7 @@ npm start
 
 
 
-# SodaApp - (01-26-2021 update)
+# SodaApp - (01-23-2022 update)
 
 ## Updates
 1. Redux added, MongoDb configs fix
