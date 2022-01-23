@@ -1,25 +1,15 @@
-# SodaApp - (12-26-2021 update)
-
 MERN SodaVendingMachine Application
 
-## Installation
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+## Figma/Brainstroming Notes:
+[Notes](https://www.figma.com/file/Ft2cezRsqzBklfIQ9fJOEQ/Soda?node-id=0%3A1)
 
-```bash
-pip install foobar
-```
-
-## How to Run Project
-```bash
-mkdir [whateverYouWant]
-cd [whateverYouWant]
-git clone git@github.com:BDPeppers/SodaProject.git
-```
-
+## TechStack - (MERN)
+* FrontEnd - ReactJs/Redux (Material-UI and D3 used for some UI components)
+* Backend - Express, MongoDB, NodeJs
 
 ## Starting Server
 ```bash
-cd server
+cd express
 npm start
 ```
 
@@ -29,21 +19,16 @@ cd soda-app
 npm start
 ```
 
-## Figma/Brainstroming Notes:
-
-[Notes](https://www.figma.com/file/Ft2cezRsqzBklfIQ9fJOEQ/Soda?node-id=0%3A1)
-
+# SodaApp - (12-26-2021 update)
 
 ## Bugs
 1. after inputting the desired soda QTY you must click outside of the text field
 2. update API doesn't work (couldn't figure out the connection_err)
 
-
 ## Work to be Completed
 1. secure MongoDB credentials
 2. debug MongoDb configs
 3. debug update API (restock and sodaQuantity update were to use the same API)
-
 
 ## Improvements to Make/Things to Do
 1. Create an account dashboard
@@ -56,6 +41,14 @@ npm start
 6. Launch Application
 
 
-## TechStack - (MERN)
-* FrontEnd - ReactJs/Redux
-* Backend - Express, MongoDB, NodeJs
+
+# SodaApp - (01-26-2021 update)
+
+## Updates
+1. Redux added, MongoDb configs fix
+2. UI touch up (added product page and analytics dashboard)
+
+## Improvements to Make/Things to Do
+1. Introduce the concept on money and user accounts
+2. Add Unit tests for APIs
+
