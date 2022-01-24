@@ -49,6 +49,6 @@ npm start
 2. UI touch up (added product page and analytics dashboard)
 
 ## Improvements to Make/Things to Do
-1. Introduce the concept on money and user accounts
+1. Introduce the concept of money and user accounts
 2. Add Unit tests for APIs
 
