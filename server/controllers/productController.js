@@ -13,7 +13,6 @@ export const getSodas = async (req, res) => {
         console.log(sodas)
         res.status(200).json(sodas);
     } catch (error) {
-        console.log('didnt work')
         res.status(404).json({ message: error.message });
     }
 }
@@ -26,6 +25,24 @@ export const updateSodaStock = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with id: ${_id}`);
 
     await SodaOperation.findByIdAndUpdate(_id, {quantity: req.body.quantity, purchased: req.body.price}, function(err, result) {
+        if (err) {
+          res.send(err);
+        } else {
+          res.send(result);
+        }
+     } );
+
+    res.json(sodaStock);
+}
+
+//restock soda
+export const restockSoda = async (req, res) => {
+    const { id: _id } = req.params;
+    const {sodaStock} = req.body
+    
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with id: ${_id}`);
+
+    await SodaOperation.findByIdAndUpdate(_id, {quantity: req.body.quantity}, function(err, result) {
         if (err) {
           res.send(err);
         } else {

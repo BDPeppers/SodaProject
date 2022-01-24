@@ -1,6 +1,6 @@
 import express from 'express'
 
-import { getSodas, updateSodaStock, updateSodaPrice } from '../controllers/productController.js';
+import { getSodas, updateSodaStock, updateSodaPrice, restockSoda } from '../controllers/productController.js';
 
 const router = express.Router()
 
@@ -9,6 +9,7 @@ const router = express.Router()
 router.get('/sodas', getSodas);
 router.post('/price', updateSodaPrice);
 router.post('/stock', updateSodaStock);
+router.post('/restock', restockSoda );
 
 
 export default router
