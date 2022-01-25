@@ -22,7 +22,7 @@ export const updateSodaStock = async (req, res) => {
     const { id: _id } = req.params;
     const {sodaQTY} = req.body
     
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with id: ${_id}`);
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No soda with id: ${_id}`);
 
     await SodaOperation.findByIdAndUpdate(_id, {quantity: sodaQTY, purchased: sodaQTY}, function(err, result) {
         if (err) {
@@ -40,9 +40,9 @@ export const restockSoda = async (req, res) => {
     const { id: _id } = req.params;
     const {sodaStock} = req.body
     
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with id: ${_id}`);
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No soda with id: ${_id}`);
 
-    await SodaOperation.findByIdAndUpdate(_id, {quantity: req.body.quantity}, function(err, result) {
+    await SodaOperation.findByIdAndUpdate(_id, {quantity: sodaStock}, function(err, result) {
         if (err) {
           res.send(err);
         } else {
@@ -58,9 +58,9 @@ export const updateSodaPrice = async (req, res) => {
     const { id: _id } = req.params;
     const {sodaPrice} = req.body
     
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with id: ${_id}`);
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No soda with id: ${_id}`);
 
-    await SodaOperation.findByIdAndUpdate(_id, {price: req.body.price}, function(err, result) {
+    await SodaOperation.findByIdAndUpdate(_id, {price: sodaPrice}, function(err, result) {
         if (err) {
           res.send(err);
         } else {
