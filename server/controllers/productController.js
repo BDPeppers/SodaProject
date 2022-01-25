@@ -20,11 +20,11 @@ export const getSodas = async (req, res) => {
 //update sodas quantity and purchased attributes
 export const updateSodaStock = async (req, res) => {
     const { id: _id } = req.params;
-    const {sodaStock} = req.body
+    const {sodaQTY} = req.body
     
     if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No post with id: ${_id}`);
 
-    await SodaOperation.findByIdAndUpdate(_id, {quantity: req.body.quantity, purchased: req.body.price}, function(err, result) {
+    await SodaOperation.findByIdAndUpdate(_id, {quantity: sodaQTY, purchased: sodaQTY}, function(err, result) {
         if (err) {
           res.send(err);
         } else {
@@ -32,7 +32,7 @@ export const updateSodaStock = async (req, res) => {
         }
      } );
 
-    res.json(sodaStock);
+    res.json(sodaQTY);
 }
 
 //restock soda
