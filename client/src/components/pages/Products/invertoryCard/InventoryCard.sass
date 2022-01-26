@@ -1,0 +1,65 @@
+div.sodaCanCard
+    flex-basis: 45%
+    display: flex
+    margin: 1rem 0
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+// img
+.css-o69gx8-MuiCardMedia-root
+    margin: 1rem
+    width: unset !important
+// content
+.css-46bh2p-MuiCardContent-root
+    padding: 1rem !important
+
+div.sodaCanCardImg
+    width: 85%
+    height: 50%
+
+div.price-stock-box
+    display: flex
+    padding-bottom: .5rem
+    width: 75%
+    justify-content: space-between
+
+div.sodaCardActions
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    width: unset !important
+    padding: .5rem
+    button
+        flex-basis: 30%
+
+    
+//Responsive Styling
+$tablet: 700px
+$laptop: 1024px
+$desktop: 1140px
+
+@media (min-width: $tablet)
+    div.sodaCanCard
+        flex-direction: row
+        margin: 2rem 0
+        padding: 1rem
+        .soda-name
+            font-size: 2.5rem
+        .soda-desc
+            font-size: 1.2rem
+        .product-details
+            font-size: 1rem
+
+@media (min-width: $laptop)
+    div.sodaCanCard
+        flex-direction: row
+        margin: 2rem 0
+        .soda-name
+            font-size: 3rem
+        .soda-desc
+            font-size: 1.7rem
+        .product-details
+            font-size: 1.3rem
+        
+  
