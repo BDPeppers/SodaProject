@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 //componenents
 import HeaderNav from './components/navigation/HeaderNav/HeaderNav';
@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/Products" element={<Product/>}/>
-        <Route path="Dashboard" element={<DashBoard/>}/>
+        <Route path="/Dashboard" element={<DashBoard/>}/>
       </Routes>
       <FooterNav/>
     </>

@@ -22,8 +22,7 @@ export const fetchSodaData = createAsyncThunk(
 export const postSodaPrice = createAsyncThunk(
     'sodas/updateSodaPrice',
     async (data) => {
-        const {id, price} = data;
-        const response = await sodaApi.updateSodaPrice(id, price);
+        const response = await sodaApi.updateSodaPrice(data.id, data.price);
         return response;
 })
 
@@ -31,8 +30,7 @@ export const postSodaPrice = createAsyncThunk(
 export const postSodaStock = createAsyncThunk(
     'sodas/updateSodaStock',
     async (data) => {
-        const {id, purchase} = data;
-        const response = await sodaApi.updateSodaStock(id, purchase);
+        const response = await sodaApi.updateSodaStock(data.id, data.purchaseAmount, data.remainingStock);
         return response;
     }
 )
@@ -41,8 +39,7 @@ export const postSodaStock = createAsyncThunk(
 export const postRestockSoda = createAsyncThunk(
     'sodas/restockSoda',
     async (data) => {
-        const {id, maxQty} = data
-        const respone = await sodaApi.restockSoda(id, maxQty)
+        const respone = await sodaApi.restockSoda(data.id, data.maxQty)
         return respone;
     }
 )
@@ -58,6 +55,7 @@ const SodaSlice = createSlice({
     },
     reducers : {
         purchaseSoda: (state, action) => {
+            console.log(action)
             return action.payload
         },
         updateSodaPrice: (state, action) => {
@@ -72,22 +70,15 @@ const SodaSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchSodaData.fulfilled, (state, action) => {
-            //set soda data
             state.sodas = action.payload
         })
         builder.addCase(postSodaPrice.fulfilled, (state, action) => {
-            //return new soda price
-            // console.log(action.payload)
             state.apiStatus = action.payload
         })
         builder.addCase(postSodaStock.fulfilled, (state, action) => {
-            //return soda stock
-            console.log(action.payload)
             state.apiStatus = action.payload
         })
         builder.addCase(postRestockSoda.fulfilled, (state, action) => {
-            //return full stocked soda
-            console.log(action.payload)
             state.apiStatus = action.payload
         })
     }

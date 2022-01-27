@@ -8,8 +8,8 @@ const router = express.Router()
 //(routePath, routeHandler)
 router.get('/sodas', getSodas);
 router.post('/price', updateSodaPrice);
-router.post('/stock', updateSodaStock);
-router.post('/restock', restockSoda );
+router.patch('/stock', updateSodaStock);
+router.patch('/restock', restockSoda );
 
 
 export default router

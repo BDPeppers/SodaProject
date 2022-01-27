@@ -1,11 +1,11 @@
 import React from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 
+var sodaStats;
 export default class SodaPieChart extends React.PureComponent {
   constructor(props){
     super(props);
-    
-    console.log(props);
+    console.log(props.data);
   }
   
   render() {
@@ -24,7 +24,7 @@ export default class SodaPieChart extends React.PureComponent {
             className='piechart'
           >
             {this.props.data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={this.props.data[index % 4].color} />
+              <Cell key={`cell-${index}`} fill={this.props.data[index % 4].hexColorCode} />
               // {COLORS[index % COLORS.length]}
             ))}
           </Pie>

@@ -24,7 +24,7 @@ const sodaData = useSelector(state => state.sodaState.sodas)
 useEffect(() => {
   dispatch(fetchSodaData())
   setSoda(sodaData)
-}, [])
+},[])
 
 const [sodas, setSoda] = React.useState([]);
 

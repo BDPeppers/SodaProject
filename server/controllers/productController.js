@@ -10,7 +10,6 @@ export const getSodas = async (req, res) => {
     try 
     {
         const sodas = await SodaOperation.find();
-        console.log(sodas)
         res.status(200).json(sodas);
     } catch (error) {
         res.status(404).json({ message: error.message });
@@ -19,56 +18,53 @@ export const getSodas = async (req, res) => {
 
 //update sodas quantity and purchased attributes
 export const updateSodaStock = async (req, res) => {
-    const { id: _id } = req.params;
-    const {sodaQTY} = req.body
+    const sodaPurchase = req.query
+    const mongooseId = sodaPurchase.id
     
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No soda with id: ${_id}`);
+    if (!mongoose.Types.ObjectId.isValid(mongooseId)) return res.status(404).send(`No soda with id: ${mongooseId}`);
 
-    await SodaOperation.findByIdAndUpdate(_id, {quantity: sodaQTY, purchased: sodaQTY}, function(err, result) {
+    await SodaOperation.findByIdAndUpdate(mongooseId, {quantity: sodaPurchase.remainingStock, purchased: sodaPurchase.purchaseAmount}, function(err, result) {
         if (err) {
-          res.send(err);
+          res.send(err);;
         } else {
           res.send(result);
         }
-     } );
+     }).clone().catch(function(){console.log(err)});
 
-    res.json(sodaQTY);
 }
 
 //restock soda
 export const restockSoda = async (req, res) => {
-    const { id: _id } = req.params;
-    const {sodaStock} = req.body
+    console.log('test')
+    const sodaRestock = req.query;
+    const mongooseId = sodaRestock.id
     
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No soda with id: ${_id}`);
+    if (!mongoose.Types.ObjectId.isValid(mongooseId)) return res.status(404).send(`No soda with id: ${mongooseId}`);
 
-    await SodaOperation.findByIdAndUpdate(_id, {quantity: sodaStock}, function(err, result) {
+    await SodaOperation.findByIdAndUpdate(mongooseId, {quantity: sodaRestock.maxQty}, function(err, result) {
         if (err) {
           res.send(err);
         } else {
           res.send(result);
         }
-     } );
-
-    res.json(sodaStock);
+     }).clone().catch(function(){console.log(err)});
 }
 
 //update sodas price
 export const updateSodaPrice = async (req, res) => {
-    const { id: _id } = req.params;
-    const {sodaPrice} = req.body
+    console.log('test')
+    const sodaPrice = req.query;
+    const mongooseId = sodaPrice.id;
     
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send(`No soda with id: ${_id}`);
+    if (!mongoose.Types.ObjectId.isValid(mongooseId)) return res.status(404).send(`No soda with id: ${mongooseId}`);
 
-    await SodaOperation.findByIdAndUpdate(_id, {price: sodaPrice}, function(err, result) {
+    await SodaOperation.findByIdAndUpdate(mongooseId, {price: sodaPrice}, function(err, result) {
         if (err) {
           res.send(err);
         } else {
           res.send(result);
         }
-     } );
-
-    res.json(sodaPrice);
+     }).clone().catch(function(){console.log(err)});
 }
 
 export default router;

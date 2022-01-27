@@ -40,18 +40,19 @@ export default function ControlPanel() {
   //move this up a component
   //create another one that will update after a successful purchase
   //call 2 thunk, updateSodaStock and then fetchSodaData
+
+  const [open, setOpen] = React.useState(false);
+  const [succesfulPurchase, setSuccessfulPurcahse] = React.useState(false);
+  const [sodas, setSoda] = React.useState(sodaData);  
+  const [selectedSoda, setSelectedSoda] = React.useState();//cola is the default
+  const [qty, setQty] = React.useState(0);//soda quantity
+  
   useEffect(() => {
     dispatch(fetchSodaData())
     setSoda(sodaData)
     setSelectedSoda(sodaData[0])
-  }, [])
+  }, [open])
 
-  const [open, setOpen] = React.useState(false);
-  const [succesfulPurchase, setSuccessfulPurcahse] = React.useState(false);
-  const [sodas, setSoda] = React.useState([]);
-  const [selectedSoda, setSelectedSoda] = React.useState();//cola is the default
-  const [qty, setQty] = React.useState(0);//soda quantity
-  
   //keeps track of soda selected
   const handleSodaInput = (event) => {
     let sodaId = event.target.value
@@ -68,11 +69,14 @@ function purchase(soda, sodaQty){
   if(sodaQty > soda.quantity){
     alert(`Only ${soda.quantity} ${soda.name} available`);
   }else{
-    fileDownLoad(soda, sodaQty);
+    // fileDownLoad(soda, sodaQty);
     //update soda Quantity
     let newQTY = soda.quantity - sodaQty;
+    let purchasedAmount = parseInt(sodaQty)
+    
+    let payload = {id: soda._id, purchaseAmount: purchasedAmount, remainingStock: newQTY}
+    dispatch(postSodaStock(payload))
     setSuccessfulPurcahse(true);
-    dispatch(purchaseSoda(soda.id, newQTY))
   }
 }
   //opens control panel

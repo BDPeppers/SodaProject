@@ -13,14 +13,14 @@ function Dashboard() {
     const dispatch = useDispatch()
     const sodaData = useSelector(state => state.sodaState.sodas)
     
-
+    const [sodas, setSoda] = React.useState([sodaData]);
     useEffect(() => { 
         dispatch(fetchSodaData())
         setSoda(sodaData)
-    }, [])
+    },[sodaData])
 
-    const [sodas, setSoda] = React.useState([sodaData]);
-    console.log(sodas)
+    
+
     return ( 
     <>
         <section className="dashboard-page page">
