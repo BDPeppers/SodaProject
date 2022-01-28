@@ -9,9 +9,9 @@ axios.patch(`${url}/stock?id=${id}&purchaseAmount=${purchaseAmount}&remainingSto
 .then(response => response.data).catch((error) => (console.log(error.message)));
 
 export const restockSoda = (id, maxQty) => 
-axios.post(`${url}/restock`, id, maxQty)
+axios.patch(`${url}/restock?id=${id}&maxQty=${maxQty}`, id, maxQty)
 .then(response => response.data).catch((error) => (console.log(error.message)));
 
 export const updateSodaPrice = (id, price) =>
-axios.post(`${url}/price`, id, price)
+axios.patch(`${url}/price`, id, price)
 .then(response => response.data).catch((error) => (console.log(error.message)));

@@ -50,13 +50,19 @@ const SodaSlice = createSlice({
     name: 'sodaSlice',
     initialState: {
         loading: 'loading',
+        dropIt: 'none',
         apiStatus: '',
         sodas: []
     },
     reducers : {
-        purchaseSoda: (state, action) => {
-            console.log(action)
-            return action.payload
+        purchaseSuccess: (state, action) => {
+            console.log(action.payload)
+            if(action.payload){
+                state.dropIt = 'block'
+            }else{
+                state.dropIt = 'none'
+            }
+            
         },
         updateSodaPrice: (state, action) => {
             //call API
@@ -90,5 +96,5 @@ const SodaSlice = createSlice({
 
 //need to create a thunk for each API call and then dispatch fetchSodaData after each operation
 
-export const {purchaseSoda, updateSodaPrice, restockSoda, loadingData, dataLoaded} = SodaSlice.actions
+export const {purchaseSuccess, updateSodaPrice, restockSoda, loadingData, dataLoaded} = SodaSlice.actions
 export default SodaSlice.reducer

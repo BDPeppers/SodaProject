@@ -23,21 +23,23 @@ export const updateSodaStock = async (req, res) => {
     
     if (!mongoose.Types.ObjectId.isValid(mongooseId)) return res.status(404).send(`No soda with id: ${mongooseId}`);
 
+    //do some math
     await SodaOperation.findByIdAndUpdate(mongooseId, {quantity: sodaPurchase.remainingStock, purchased: sodaPurchase.purchaseAmount}, function(err, result) {
         if (err) {
           res.send(err);;
         } else {
           res.send(result);
         }
-     }).clone().catch(function(){console.log(err)});
+     }).clone().catch(function(err){console.log(err)});
 
 }
 
 //restock soda
 export const restockSoda = async (req, res) => {
-    console.log('test')
+    
     const sodaRestock = req.query;
     const mongooseId = sodaRestock.id
+    console.log(sodaRestock)
     
     if (!mongoose.Types.ObjectId.isValid(mongooseId)) return res.status(404).send(`No soda with id: ${mongooseId}`);
 
@@ -47,7 +49,7 @@ export const restockSoda = async (req, res) => {
         } else {
           res.send(result);
         }
-     }).clone().catch(function(){console.log(err)});
+     }).clone().catch(function(err){console.log(err)});
 }
 
 //update sodas price
@@ -64,7 +66,7 @@ export const updateSodaPrice = async (req, res) => {
         } else {
           res.send(result);
         }
-     }).clone().catch(function(){console.log(err)});
+     }).clone().catch(function(err){console.log(err)});
 }
 
 export default router;

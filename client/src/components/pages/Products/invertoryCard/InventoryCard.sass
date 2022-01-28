@@ -1,37 +1,51 @@
 div.sodaCanCard
-    flex-basis: 45%
+    flex-basis: 40%
     display: flex
-    margin: 1rem 0
+    margin: .5rem 0
+    padding: 1rem
     align-items: center
     justify-content: center
     flex-direction: column
+    border-radius: 2rem
+    height: 45%
+    border: .05rem solid lighten(#004aac, 60%)
 
-// img
-.css-o69gx8-MuiCardMedia-root
-    margin: 1rem
-    width: unset !important
-// content
-.css-46bh2p-MuiCardContent-root
-    padding: 1rem !important
+div.flexbox-1, div.flexbox-2
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
 
-div.sodaCanCardImg
-    width: 85%
-    height: 50%
+h1.soda-name
+    font-size: 1.7rem
+    text-align: center
+
+div.soda-img-wrapper
+    display: flex
+    justify-content: center
+img.soda-can-img
+    padding: 1.5rem
+
 
 div.price-stock-box
     display: flex
     padding-bottom: .5rem
-    width: 75%
-    justify-content: space-between
+    width: 100%
+    justify-content: center
+    h2
+        padding-right: 1rem
+        font-size: 1.2rem
 
-div.sodaCardActions
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-evenly
-    width: unset !important
+p.soda-desc
+    font-size: 1rem
     padding: .5rem
-    button
-        flex-basis: 30%
+    padding-bottom: 1rem
+    text-align: center
+
+button.soda-restock-btn
+    font-size: 1.2rem
+
+
 
     
 //Responsive Styling
@@ -42,7 +56,7 @@ $desktop: 1140px
 @media (min-width: $tablet)
     div.sodaCanCard
         flex-direction: row
-        margin: 2rem 0
+        flex-basis: 40%
         padding: 1rem
         .soda-name
             font-size: 2.5rem
@@ -50,11 +64,13 @@ $desktop: 1140px
             font-size: 1.2rem
         .product-details
             font-size: 1rem
+    div.flexbox-1, div.flexbox-2
+        padding: 0 1.5rem
+        flex-basis: 50%
 
 @media (min-width: $laptop)
     div.sodaCanCard
         flex-direction: row
-        margin: 2rem 0
         .soda-name
             font-size: 3rem
         .soda-desc

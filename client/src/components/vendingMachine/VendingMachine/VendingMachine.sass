@@ -5,9 +5,33 @@ div.vendingMachineBox
     width: 100%
     height: 100%
     justify-content: center
-    button.controlPanel-btn
-        width: 80%
-        max-width: 200px
+
 img.vendingMachineImg
     width: 100%
-    max-width: 300px
+    max-width: 40rem
+
+
+div.soda-purchase-box
+    min-height: 6rem
+    img.soda-animation
+        animation: fadeInDown 5s cubic-bezier(0.1, -0.6, 0.2, 0) .3s
+        opacity: 0
+    
+@keyframes fadeInDown
+    0%
+        opacity: 0
+        transform: translateY(-2rem)
+    50%
+        opacity: 100
+        transform: translateY(0)
+    100%
+        opacity: 100
+        // sit there for a sec
+        
+
+
+
+  
+
+
+

@@ -6,6 +6,9 @@ function DataCard(props) {
     return ( 
     <>
         <div className="data-card">
+            <div className="data-card-title">
+              <h1 className="card-title">Sodas Purchased</h1>
+            </div>
             <div className="chart">
                 <Piechart data={props.data}/>
             </div>
@@ -20,7 +23,6 @@ function DataCard(props) {
                 </div>
               ))}
             </div>
-            
         </div>
     </> );
 }
