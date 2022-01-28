@@ -31,12 +31,10 @@ export const updateSodaStock = async (req, res) => {
           res.send(result);
         }
      }).clone().catch(function(err){console.log(err)});
-
 }
 
 //restock soda
 export const restockSoda = async (req, res) => {
-    
     const sodaRestock = req.query;
     const mongooseId = sodaRestock.id
     console.log(sodaRestock)

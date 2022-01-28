@@ -61,18 +61,13 @@ const SodaSlice = createSlice({
                 state.dropIt = 'block'
             }else{
                 state.dropIt = 'none'
-            }
-            
-        },
-        updateSodaPrice: (state, action) => {
-            //call API
-            return action.payload
-            console.log(state)
-        },
-        restockSoda: (state, action) => {
-            return action.payload
-            console.log(state)
+            }   
         }
+        // updateSodaPrice: (state, action) => {
+        //     //call API
+        //     return action.payload
+        //     console.log(state)
+        // }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchSodaData.fulfilled, (state, action) => {

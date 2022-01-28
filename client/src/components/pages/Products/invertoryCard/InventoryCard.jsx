@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { postRestockSoda } from '../../../../redux/sodaOperations/sodaSlice';
 
@@ -12,7 +12,10 @@ export default function InventoryCard(props) {
     id : props.soda._id,
     maxQty: props.soda.maxQuantity
   }
-  
+
+ 
+
+
   return (
 
     <div className="sodaCanCard card">

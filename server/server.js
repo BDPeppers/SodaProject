@@ -11,7 +11,7 @@ import ProductRoutes from './routes/productRoutes.js'//api routes
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
-app.use(cors());
+app.use(cors()); //allows restricted resources on a web page to be requested from another domain outside the domain
 
 
 app.use('/api', ProductRoutes)

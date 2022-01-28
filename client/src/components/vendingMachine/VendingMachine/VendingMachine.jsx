@@ -8,7 +8,6 @@ export default function VendingMachine () {
     
     useEffect(() =>{
         setSodaAnimation(dropSoda)
-        
     }, [dropSoda])
     const [sodaAnimation, setSodaAnimation] = React.useState(dropSoda)
 
